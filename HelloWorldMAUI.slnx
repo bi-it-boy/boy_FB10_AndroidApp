@@ -1,3 +1,6 @@
 <Solution>
   <Project Path="HelloWorldMAUI/HelloWorldMAUI.csproj" />
+  <Project Path="MoodTracker/MoodTracker.csproj" Id="5f321de7-8bce-4098-b1b0-c823a8a31ac5">
+    <Deploy Solution="Debug|*" />
+  </Project>
 </Solution>

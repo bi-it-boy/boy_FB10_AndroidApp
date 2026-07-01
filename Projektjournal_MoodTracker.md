@@ -1,21 +1,20 @@
 # Projektjournal – MoodTracker App
 
+MUSS NOCH ÜBERARBEITET WERDEN
+
 ## 1. Projektdaten
 
-| Punkt | Inhalt |
+| **Fachblock 10** | Android App Entwicklung |
 |---|---|
 | **Projektname** | MoodTracker |
-| **Thema** | Android App Entwicklung |
 | **Fachbereich** | API |
 | **Technologie** | C# mit .NET MAUI |
-| **Entwicklungsumgebung** | Visual Studio 2022, Englisch |
+| **Entwicklungsumgebung** | Visual Studio 2026 |
 | **Zielplattform** | Android |
 | **Repository** | [GitHub-Link einfügen] |
 | **Ablage** | GitHub und SharePoint |
-| **Projektstart** | [Datum einfügen] |
+| **Projektstart** | 24.06.2026 |
 | **Abgabetermin / Zwischenpräsentation** | 08.07.2026 |
-| **Projektverantwortliche Person** | Yané Bonne Ramos |
-| **Betreuung / FW-Leitung** | [Name einfügen] |
 
 ---
 
@@ -140,26 +139,26 @@ Ziel ist es, eine funktionsfähige Android-App zu entwickeln, mit der Rückmeldu
 
 ## Entwicklungsumgebung
 
-- [ ] Visual Studio 2022 installiert
+- [X] Visual Studio 2026 installiert
 - [ ] Oberfläche auf Englisch eingestellt
-- [ ] .NET MAUI Workload installiert
+- [X] .NET MAUI Workload installiert
 - [ ] Android SDK installiert
 - [ ] Android Emulator eingerichtet
 - [ ] Testgerät im Emulator erstellt
-- [ ] Git installiert und eingerichtet
-- [ ] GitHub-Zugang geprüft
+- [X] Git installiert und eingerichtet
+- [X] GitHub-Zugang geprüft
 
 ## HelloWorldMAUI
 
-- [ ] Neues .NET-MAUI-Projekt erstellt
-- [ ] Projektname `HelloWorldMAUI` gewählt
-- [ ] Standard-App ohne Fehler gestartet
+- [X] Neues .NET-MAUI-Projekt erstellt
+- [X] Projektname `HelloWorldMAUI` gewählt
+- [X] Standard-App ohne Fehler gestartet
 - [ ] App im Android Emulator ausgeführt
 - [ ] Text oder Button testweise angepasst
 - [ ] Änderungen erneut im Emulator getestet
-- [ ] Git-Repository initialisiert
-- [ ] Ersten Commit erstellt
-- [ ] Repository auf GitHub hochgeladen
+- [X] Git-Repository initialisiert
+- [X] Ersten Commit erstellt
+- [X] Repository auf GitHub hochgeladen
 - [ ] GitHub-Link im Projektjournal ergänzt
 
 ## Meilenstein 1
