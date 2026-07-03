@@ -1,888 +1,595 @@
-# Projektjournal – MoodTracker App
+# 📘 Projektjournal – MoodTracker
 
-MUSS NOCH ÜBERARBEITET WERDEN
 
-## 1. Projektdaten
+---
 
-| **Fachblock 10** | Android App Entwicklung |
+## Inhaltsverzeichnis
+
+- [📘 Projektjournal – MoodTracker](#-projektjournal--moodtracker)
+  - [ℹ️ Info](#ℹ️-info)
+  - [Inhaltsverzeichnis](#inhaltsverzeichnis)
+  - [Tagesaktivitäten](#tagesaktivitäten)
+  - [Phase 1 – Setup und Initialisierung](#phase-1--setup-und-initialisierung)
+  - [Phase 2 – Planung](#phase-2--planung)
+    - [📂 Geplante Datenstruktur](#-geplante-datenstruktur)
+    - [🔷 Geplantes UML-Klassendiagramm](#-geplantes-uml-klassendiagramm)
+    - [🖼️ Geplantes Layout](#️-geplantes-layout)
+    - [✅ Geplante Validierung](#-geplante-validierung)
+  - [Phase 3 – Umsetzung](#phase-3--umsetzung)
+  - [Phase 4 – Testing und technische Reflexion](#phase-4--testing-und-technische-reflexion)
+  - [Phase 5 – Abschluss und Präsentation](#phase-5--abschluss-und-präsentation)
+  - [📸 Screenshots vom Fortschritt](#-screenshots-vom-fortschritt)
+  - [⚠️ Herausforderungen und Blockaden](#️-herausforderungen-und-blockaden)
+    - [🧩 Visual Studio und Projektstruktur](#-visual-studio-und-projektstruktur)
+    - [🤖 Android SDK und Emulator](#-android-sdk-und-emulator)
+    - [🌿 Git, Commit und Push](#-git-commit-und-push)
+  - [💻 Besonders erwähnenswerte Code-Beispiele](#-besonders-erwähnenswerte-code-beispiele)
+  - [Reflexion](#reflexion)
+
+---
+
+## Tagesaktivitäten
+
+| Datum | Aktivität |
 |---|---|
-| **Projektname** | MoodTracker |
-| **Fachbereich** | API |
-| **Technologie** | C# mit .NET MAUI |
-| **Entwicklungsumgebung** | Visual Studio 2026 |
-| **Zielplattform** | Android |
-| **Repository** | [GitHub-Link einfügen] |
-| **Ablage** | GitHub und SharePoint |
-| **Projektstart** | 24.06.2026 |
-| **Abgabetermin / Zwischenpräsentation** | 08.07.2026 |
+| Mi, 01.07.2026 | Visual Studio 2026 eingerichtet und auf Englisch umgestellt. |
+| Mi, 01.07.2026 | .NET MAUI 10 geprüft und ein neues Projekt `HelloWorldMAUI` erstellt. |
+| Mi, 01.07.2026 | Hello-World-App mit `Windows Machine` gestartet. |
+| Mi, 01.07.2026 | Android Emulator getestet. Android-SDK-Lizenzen konnten noch nicht akzeptiert werden. |
+| Mi, 01.07.2026 | Git for Windows installiert und Git über das Terminal verwendet. |
+| Mi, 01.07.2026 | Projektjournal zum Repository hinzugefügt, committed und gepusht. |
+| Mi, 01.07.2026 | Repository-Struktur angepasst, damit `HelloWorldMAUI`, `MoodTracker` und das Projektjournal getrennt abgelegt werden können. |
+| Mi, 01.07.2026 | Neues .NET-MAUI-Projekt `MoodTracker` erstellt. |
+
 
 ---
 
-## 2. Ausgangslage
+## Phase 1 – Setup und Initialisierung
 
-In Camps, Freizeitangeboten oder sozialen Einrichtungen nehmen Personen an verschiedenen Aktivitäten wie Sportkursen, Tanzkursen, Bastelkursen oder Workshops teil. Rückmeldungen zu diesen Angeboten werden häufig nur mündlich oder unregelmässig abgegeben.
+**Datum:** 01.07.2026
 
-Mit der MoodTracker-App soll eine einfache Möglichkeit geschaffen werden, nach einem Angebot eine kurze Rückmeldung zu erfassen. Die Benutzerin oder der Benutzer wählt ein Angebot sowie eine Stimmung aus und kann optional eine Notiz hinzufügen. Die Rückmeldungen werden gespeichert und in einer Liste angezeigt.
+### Was habe ich in Phase 1 umgesetzt?
 
-Die App wird mit C# und .NET MAUI umgesetzt. Zur bewussten Vereinfachung wird auf das MVVM-Pattern verzichtet. Das Data Binding erfolgt direkt oder über Code-Behind.
+Zu Beginn wurde die Entwicklungsumgebung eingerichtet. Verwendet wird Visual Studio 2026 mit .NET MAUI 10. Da im Projektauftrag eine englische Entwicklungsumgebung verlangt wird, wurde Visual Studio auf Englisch umgestellt.
 
----
+Anschliessend wurde ein neues Projekt mit der Vorlage `.NET MAUI App` erstellt.
 
-## 3. Projektziel
+Das erste Projekt trägt den Namen:
 
-Ziel ist es, eine funktionsfähige Android-App zu entwickeln, mit der Rückmeldungen zu Angeboten erfasst, gespeichert und später wieder angezeigt werden können.
+```text
+HelloWorldMAUI
+```
 
-### Muss-Ziele
+Das Projekt konnte mit `Windows Machine` gestartet werden. Dadurch wurde bestätigt, dass das Projekt grundsätzlich korrekt erstellt wurde und die .NET-MAUI-Umgebung funktioniert.
 
-- [ ] Ein Angebot kann ausgewählt werden.
-- [ ] Eine Stimmung kann ausgewählt werden.
-- [ ] Eine optionale Notiz kann eingegeben werden.
-- [ ] Ein Eintrag kann gespeichert werden.
-- [ ] Alle bisherigen Einträge werden in einer Liste angezeigt.
-- [ ] Die App läuft im Android Emulator.
-- [ ] Der Quellcode ist im GitHub-Repository gespeichert.
-- [ ] Die App entspricht den vorgegebenen C#-Codier-Richtlinien.
-- [ ] Die App verwendet .NET MAUI und kein MAUI Blazor.
-- [ ] Es wird kein ViewModel verwendet.
-- [ ] Die Architektur ist bewusst auf zwei Schichten vereinfacht.
+Der Android Emulator konnte noch nicht vollständig verwendet werden, da die Android-SDK-Lizenzen noch nicht akzeptiert wurden.
 
-### Kann-Ziele
+### Repository-Struktur
 
-- [ ] Einträge können gelöscht werden.
-- [ ] Einträge können bearbeitet werden.
-- [ ] Eine einfache Statistikseite wird angezeigt.
-- [ ] Die Kursliste kann erweitert werden.
-- [ ] Die Kursliste unterstützt CRUD.
-- [ ] Die App funktioniert im Portrait- und Landscape-Modus.
-- [ ] Das Design kann angepasst werden.
-- [ ] Eine externe API wird angebunden.
-- [ ] Eine tägliche Erinnerung wird implementiert.
-- [ ] Eine Datenverarbeitungszustimmung wird angezeigt.
-- [ ] Eine Benutzeranmeldung wird implementiert.
-- [ ] Ein biometrischer Login wird implementiert.
-- [ ] Eine Sponsor- oder Informationsseite wird ergänzt.
+Die geplante Struktur des Repositories ist:
 
----
+```text
+Repository/
+├── Projektjournal_MoodTracker.md
+├── HelloWorldMAUI.slnx
+├── HelloWorldMAUI/
+│   ├── HelloWorldMAUI.csproj
+│   ├── App.xaml
+│   ├── MainPage.xaml
+│   ├── Platforms/
+│   └── Resources/
+└── MoodTracker/
+    ├── MoodTracker.csproj
+    ├── App.xaml
+    ├── MainPage.xaml
+    ├── Platforms/
+    └── Resources/
+```
 
-## 4. Geplanter Funktionsumfang
+Das Projektjournal befindet sich auf der obersten Ebene und ist somit beiden Projekten übergeordnet.
 
-### Version 1 – Minimal funktionsfähig
+### GitHub
 
-- Angebot auswählen
-- Stimmung auswählen
-- optionale Notiz eingeben
-- Eintrag speichern
-- Einträge anzeigen
+Git wurde über das Terminal verwendet.
 
-### Version 2 – Verbesserte App
+Beispiel für die verwendeten Befehle:
 
-- Einträge löschen
-- Formular validieren
-- Bestätigung nach dem Speichern
-- übersichtlicheres Design
-- Navigation zwischen mehreren Seiten
+```powershell
+git status
+git add Projektjournal_MoodTracker.md
+git commit -m "Add project journal"
+git push
+```
 
-### Version 3 – Erweiterungen
+### Meilenstein 1
 
-- Statistikseite
-- Kursverwaltung mit CRUD
-- Filter nach Kurs oder Stimmung
-- externe API
-- Erinnerungsfunktion
-- Login oder biometrische Sicherung
-
----
-
-## 5. Verwendete Technologien und Werkzeuge
-
-| Werkzeug / Technologie | Zweck |
-|---|---|
-| Visual Studio 2022 | Entwicklung der App |
-| C# | Programmiersprache |
-| .NET MAUI | Framework für die App |
-| XAML | Gestaltung der Benutzeroberfläche |
-| Android Emulator | Testen der App |
-| Git | Versionsverwaltung |
-| GitHub | Speicherung des Repositories |
-| SharePoint | zusätzliche Ablage |
-| Figma / Papier | Mockup und Planung |
-| Markdown | Projektjournal und Dokumentation |
-
----
-
-## 6. Geplante Datenstruktur
-
-### Klasse `MoodEntry`
-
-| Attribut | Datentyp | Beschreibung |
-|---|---|---|
-| `Id` | int | eindeutige ID |
-| `CourseName` | string | Name des ausgewählten Angebots |
-| `Mood` | string | ausgewählte Stimmung |
-| `Note` | string | optionale Notiz |
-| `CreatedAt` | DateTime | Datum und Uhrzeit des Eintrags |
-
-### Optionale Klasse `Course`
-
-| Attribut | Datentyp | Beschreibung |
-|---|---|---|
-| `Id` | int | eindeutige ID |
-| `Name` | string | Name des Angebots |
-| `Category` | string | Kategorie des Angebots |
-| `Description` | string | optionale Beschreibung |
-
----
-
-## 7. Projektphasen und Arbeitsschritte
-
-# Phase 1 – Setup und Initialisierung
-
-## Entwicklungsumgebung
-
-- [X] Visual Studio 2026 installiert
-- [ ] Oberfläche auf Englisch eingestellt
-- [X] .NET MAUI Workload installiert
-- [ ] Android SDK installiert
-- [ ] Android Emulator eingerichtet
-- [ ] Testgerät im Emulator erstellt
-- [X] Git installiert und eingerichtet
-- [X] GitHub-Zugang geprüft
-
-## HelloWorldMAUI
-
-- [X] Neues .NET-MAUI-Projekt erstellt
-- [X] Projektname `HelloWorldMAUI` gewählt
-- [X] Standard-App ohne Fehler gestartet
-- [ ] App im Android Emulator ausgeführt
-- [ ] Text oder Button testweise angepasst
-- [ ] Änderungen erneut im Emulator getestet
-- [X] Git-Repository initialisiert
-- [X] Ersten Commit erstellt
-- [X] Repository auf GitHub hochgeladen
-- [ ] GitHub-Link im Projektjournal ergänzt
-
-## Meilenstein 1
-
-- [ ] Hello-World-App einer FW-Leitung gezeigt
-- [ ] Rückmeldung erhalten
+- [x] Visual Studio installiert
+- [x] Visual Studio auf Englisch umgestellt
+- [x] .NET-MAUI-Projekt erstellt
+- [x] Hello-World-App unter Windows gestartet
+- [x] Projekt auf GitHub gespeichert
+- [ ] Android-SDK-Lizenzen akzeptiert
+- [ ] Hello-World-App im Android Emulator gestartet
+- [ ] Projekt einer FW-Leitung gezeigt
 - [ ] „Go“ zum Weiterarbeiten erhalten
 
-**Datum:** [einfügen]  
-**Rückmeldung der FW-Leitung:**  
-[Notizen einfügen]
-
 ---
 
-# Phase 2 – Planung
+## Phase 2 – Planung
 
-## Anforderungen analysieren
+**Datum:** [01. - 03.07.26]
 
-- [ ] Projektauftrag vollständig gelesen
-- [ ] Muss-Funktionen markiert
-- [ ] Kann-Funktionen priorisiert
-- [ ] technische Einschränkungen notiert
-- [ ] Verzicht auf MVVM berücksichtigt
-- [ ] Zwei-Schichten-Architektur berücksichtigt
-- [ ] Speicherlösung ausgewählt
-- [ ] Navigation der App geplant
+### Was habe ich in Phase 2 umgesetzt?
 
-## Design und Aufbau
+In dieser Phase wird die MoodTracker-App geplant. Dazu gehören die Datenstruktur, das Layout, die Navigation und die Validierungsregeln.
 
-- [ ] Name und Stil der App festgelegt
-- [ ] Farbkonzept festgelegt
-- [ ] Schriftarten und Grössen definiert
-- [ ] Mockup der Startseite erstellt
-- [ ] Mockup des Eingabeformulars erstellt
-- [ ] Mockup der Listenansicht erstellt
-- [ ] optionales Mockup der Statistikseite erstellt
-- [ ] Portrait-Ansicht berücksichtigt
-- [ ] Landscape-Ansicht berücksichtigt
+Die App soll es Benutzerinnen und Benutzern ermöglichen, nach einem Angebot eine kurze Rückmeldung zu erfassen.
 
-## Daten und Klassen
+### Geplante Kernfunktionen
 
-- [ ] Datenmodell `MoodEntry` geplant
-- [ ] Attribute und Datentypen definiert
-- [ ] Kursliste vorbereitet
-- [ ] Speicherung geplant
-- [ ] optionales UML-Klassendiagramm erstellt
-- [ ] Validierungsregeln definiert
+1. Auswahl eines Angebots
+2. Auswahl einer Stimmung
+3. Eingabe einer optionalen Notiz
+4. Speichern des Eintrags
+5. Anzeige aller bisherigen Einträge
+6. optional: Statistikseite
 
-## Validierungsregeln
+### 📂 Geplante Datenstruktur
 
-- [ ] Angebot ist Pflichtfeld
-- [ ] Stimmung ist Pflichtfeld
-- [ ] Notiz ist optional
-- [ ] Notiz hat eine sinnvolle Maximallänge
-- [ ] Fehlermeldungen sind verständlich
-- [ ] Nach erfolgreichem Speichern wird das Formular geleert
+Ein MoodTracker-Eintrag soll folgende Daten enthalten:
 
-## Meilenstein 2
+```json
+[
+  {
+    "Id": 1,
+    "CourseName": "Sportkurs",
+    "Mood": "Gut",
+    "Note": "Der Kurs hat mir gefallen.",
+    "CreatedAt": "2026-07-01T14:30:00"
+  }
+]
+```
 
+Die Datenstruktur wird durch eine C#-Klasse abgebildet.
+
+```csharp
+public class MoodEntry
+{
+    public int Id { get; set; }
+    public string CourseName { get; set; } = string.Empty;
+    public string Mood { get; set; } = string.Empty;
+    public string Note { get; set; } = string.Empty;
+    public DateTime CreatedAt { get; set; }
+}
+```
+
+Optional kann eine eigene Klasse für die Angebote erstellt werden:
+
+```csharp
+public class Course
+{
+    public int Id { get; set; }
+    public string Name { get; set; } = string.Empty;
+    public string Category { get; set; } = string.Empty;
+    public string Description { get; set; } = string.Empty;
+}
+```
+
+### 🔷 Geplantes UML-Klassendiagramm
+
+```text
+MoodEntry
+-------------------------
+Id : int
+CourseName : string
+Mood : string
+Note : string
+CreatedAt : DateTime
+-------------------------
+
+Course
+-------------------------
+Id : int
+Name : string
+Category : string
+Description : string
+-------------------------
+```
+
+![UML-Klassendiagramm](screenshots/phase2_uml.png)
+
+### 🖼️ Geplantes Layout
+
+#### Seite 1: Rückmeldung erfassen
+
+- Titel der App
+- Auswahl des Angebots
+- Auswahl der Stimmung
+- Textfeld für eine optionale Notiz
+- Speichern-Button
+- kurze Erfolgsmeldung nach dem Speichern
+
+![Mockup Eingabeformular](screenshots/phase2_mockup_form.png)
+
+#### Seite 2: Bisherige Einträge
+
+- Liste aller gespeicherten Einträge
+- Name des Angebots
+- Stimmung
+- Notiz
+- Datum und Uhrzeit
+- optional: Löschen-Button
+
+![Mockup Listenansicht](screenshots/phase2_mockup_list.png)
+
+#### Optionale Seite 3: Statistik
+
+- Anzahl aller Einträge
+- Anzahl positiver, neutraler und negativer Stimmungen
+- häufigstes Angebot
+- optional: grafische Darstellung
+
+![Mockup Statistik](screenshots/phase2_mockup_statistics.png)
+
+### ✅ Geplante Validierung
+
+| Feld | Regel | Reaktion bei ungültiger Eingabe |
+|---|---|---|
+| Angebot | Pflichtfeld | Meldung: „Bitte wähle ein Angebot aus.“ |
+| Stimmung | Pflichtfeld | Meldung: „Bitte wähle eine Stimmung aus.“ |
+| Notiz | optional | keine Fehlermeldung |
+| Notiz | maximale Länge wird noch festgelegt | Hinweis bei Überschreitung |
+| Speichern | nur bei gültigen Pflichtfeldern | Eintrag wird gespeichert |
+
+Nach erfolgreichem Speichern soll:
+
+- eine Bestätigung angezeigt werden,
+- das Formular geleert werden,
+- der neue Eintrag in der Liste erscheinen.
+
+### Meilenstein 2
+
+- [ ] Mockup erstellt
+- [ ] Datenstruktur definiert
+- [ ] Validierungen definiert
+- [ ] optionale UML erstellt
 - [ ] Planung einer FW-Leitung vorgestellt
-- [ ] Mockup gezeigt
-- [ ] Datenstruktur erklärt
-- [ ] Rückmeldung dokumentiert
 - [ ] „Go“ zur Umsetzung erhalten
 
-**Datum:** [einfügen]  
-**Rückmeldung der FW-Leitung:**  
-[Notizen einfügen]
-
 ---
 
-# Phase 3 – Umsetzung
+## Phase 3 – Umsetzung
 
-## Projektstruktur
+**Datum:** [einfügen]
 
-- [ ] Neues Projekt `MoodTracker` erstellt
-- [ ] Projekt im bestehenden Fachblock-Repository gespeichert
-- [ ] sinnvolle Ordnerstruktur erstellt
-- [ ] Modelle angelegt
-- [ ] Seiten angelegt
-- [ ] Code-Behind-Dateien vorbereitet
-- [ ] Navigation eingerichtet
+### Was habe ich in Phase 3 umgesetzt?
 
-## Benutzeroberfläche
+- [x] Neues Projekt `MoodTracker` erstellt
+- [ ] Grundlayout in XAML erstellt
+- [ ] Klasse `MoodEntry` erstellt
+- [ ] Angebotsauswahl umgesetzt
+- [ ] Stimmungsauswahl umgesetzt
+- [ ] Notizfeld umgesetzt
+- [ ] Speichern-Button umgesetzt
+- [ ] Validierung umgesetzt
+- [ ] Speicherung der Einträge umgesetzt
+- [ ] Listenansicht umgesetzt
+- [ ] gespeicherte Einträge beim Start geladen
+- [ ] Einträge nach Datum sortiert
+- [ ] Löschen von Einträgen umgesetzt
+- [ ] Statistikseite umgesetzt
+- [ ] App im Windows-Zielsystem getestet
+- [ ] App im Android Emulator getestet
 
-- [ ] Titel und App-Name eingefügt
-- [ ] Auswahlfeld für Angebote erstellt
-- [ ] Stimmungsauswahl erstellt
-- [ ] Textfeld für Notiz erstellt
-- [ ] Speichern-Button erstellt
-- [ ] Liste für bisherige Einträge erstellt
-- [ ] leere Liste sinnvoll dargestellt
-- [ ] Benutzeroberfläche im Emulator geprüft
-- [ ] Abstände und Grössen verbessert
-- [ ] Lesbarkeit geprüft
+### Verwendete Dateien
 
-## Logik
+```text
+MoodTracker/
+├── App.xaml
+├── App.xaml.cs
+├── AppShell.xaml
+├── AppShell.xaml.cs
+├── MainPage.xaml
+├── MainPage.xaml.cs
+├── MauiProgram.cs
+├── Models/
+│   └── MoodEntry.cs
+└── Services/
+    └── MoodEntryService.cs
+```
 
-- [ ] Kursliste im Code bereitgestellt
+Die genaue Struktur wird während der Umsetzung angepasst.
+
+![Erste Version](screenshots/phase3_first_version.png)
+
+### Meilenstein 3
+
+Spätestens am **08.07.2026** muss eine funktionsfähige Version vorliegen.
+
+- [ ] App startet ohne Fehler
 - [ ] Angebot kann ausgewählt werden
 - [ ] Stimmung kann ausgewählt werden
-- [ ] Notiz kann eingegeben werden
-- [ ] Eingaben werden validiert
-- [ ] Eintrag wird erzeugt
-- [ ] Datum und Uhrzeit werden automatisch ergänzt
-- [ ] Eintrag wird gespeichert
-- [ ] Liste wird nach dem Speichern aktualisiert
-- [ ] Formular wird nach dem Speichern zurückgesetzt
-- [ ] Erfolgsmeldung wird angezeigt
-
-## Speicherung
-
-- [ ] Speicherart festgelegt
-- [ ] Daten werden beim Schliessen der App nicht unbeabsichtigt verloren
-- [ ] gespeicherte Daten werden beim Start geladen
-- [ ] Fehler beim Speichern werden behandelt
-- [ ] Fehler beim Laden werden behandelt
-
-## Liste und Einträge
-
-- [ ] Angebot wird angezeigt
-- [ ] Stimmung wird angezeigt
-- [ ] Notiz wird angezeigt
-- [ ] Datum und Uhrzeit werden angezeigt
-- [ ] Einträge werden sinnvoll sortiert
-- [ ] lange Notizen werden korrekt dargestellt
-- [ ] leere Notizen werden sinnvoll behandelt
-
-## Optionale Erweiterungen
-
-- [ ] Eintrag löschen
-- [ ] Löschen bestätigen lassen
-- [ ] Eintrag bearbeiten
-- [ ] nach Angebot filtern
-- [ ] nach Stimmung filtern
-- [ ] Statistikseite erstellen
-- [ ] Anzahl Einträge pro Stimmung anzeigen
-- [ ] häufigstes Angebot anzeigen
-- [ ] Kursverwaltung erstellen
-- [ ] Kurs hinzufügen
-- [ ] Kurs bearbeiten
-- [ ] Kurs löschen
-- [ ] externe API anbinden
-- [ ] Erinnerungsfunktion ergänzen
-- [ ] Sponsorenseite ergänzen
-- [ ] Datenschutzseite ergänzen
-- [ ] Login ergänzen
-- [ ] biometrische Sicherung ergänzen
-
-## Qualität und Code
-
-- [ ] sprechende Variablennamen verwendet
-- [ ] sprechende Methodennamen verwendet
-- [ ] Methoden nicht unnötig lang
-- [ ] wiederholter Code reduziert
-- [ ] Kommentare nur dort eingesetzt, wo nötig
-- [ ] Formatierung einheitlich
-- [ ] ITS-Codier-Richtlinien geprüft
-- [ ] keine unnötigen Klassen erstellt
-- [ ] kein ViewModel verwendet
-- [ ] kein `StaticResource` für Data Binding verwendet
-- [ ] Fehler und Warnungen in Visual Studio geprüft
-
-## Git und Versionsverwaltung
-
-- [ ] nach Projektstart committed
-- [ ] nach fertigem Grundlayout committed
-- [ ] nach fertiger Eingabelogik committed
-- [ ] nach fertiger Speicherung committed
-- [ ] nach fertiger Listenansicht committed
-- [ ] nach Bugfixes committed
-- [ ] vor Meilenstein 3 committed
-- [ ] verständliche Commit-Nachrichten verwendet
-- [ ] Änderungen regelmässig auf GitHub gepusht
-- [ ] Repository aufgeräumt
-- [ ] unnötige Dateien nicht mitcommitted
-- [ ] `.gitignore` geprüft
-
-## Meilenstein 3
-
-- [ ] funktionsfähige Version erstellt
-- [ ] App startet ohne Fehler
-- [ ] Kernfunktionen funktionieren
-- [ ] App im Android Emulator getestet
+- [ ] optionale Notiz kann eingegeben werden
+- [ ] Eintrag kann gespeichert werden
+- [ ] Einträge werden in einer Liste angezeigt
 - [ ] Zwischenpräsentation vorbereitet
-- [ ] Zwischenpräsentation im IT-Labor durchgeführt
-- [ ] Stand spätestens am 08.07.2026 erreicht
-
-**Datum:** [einfügen]  
-**Rückmeldung:**  
-[Notizen einfügen]
+- [ ] Zwischenpräsentation durchgeführt
 
 ---
 
-# Phase 4 – Testen und technische Reflexion
+## Phase 4 – Testing und technische Reflexion
 
-## Testplanung
+**Datum:** [einfügen]
+
+### Was habe ich in Phase 4 umgesetzt?
 
 - [ ] Testszenarien erstellt
-- [ ] erwartete Resultate definiert
-- [ ] Tests durchgeführt
-- [ ] tatsächliche Resultate dokumentiert
-- [ ] Fehler korrigiert
-- [ ] Tests nach Korrekturen wiederholt
-
-## Testprotokoll
-
-| Test-ID | Testfall | Voraussetzung | Testschritte | Erwartetes Ergebnis | Tatsächliches Ergebnis | Status |
-|---|---|---|---|---|---|---|
-| T01 | App starten | App installiert | App öffnen | App startet ohne Fehler | [einfügen] | ☐ |
-| T02 | Angebot auswählen | App geöffnet | Angebot auswählen | Auswahl wird übernommen | [einfügen] | ☐ |
-| T03 | Stimmung auswählen | App geöffnet | Stimmung auswählen | Auswahl wird übernommen | [einfügen] | ☐ |
-| T04 | Eintrag speichern | Angebot und Stimmung gewählt | Speichern drücken | Eintrag wird gespeichert | [einfügen] | ☐ |
-| T05 | Pflichtfeld Angebot | kein Angebot gewählt | Speichern drücken | verständliche Fehlermeldung | [einfügen] | ☐ |
-| T06 | Pflichtfeld Stimmung | keine Stimmung gewählt | Speichern drücken | verständliche Fehlermeldung | [einfügen] | ☐ |
-| T07 | Notiz leer lassen | Angebot und Stimmung gewählt | ohne Notiz speichern | Eintrag wird gespeichert | [einfügen] | ☐ |
-| T08 | Einträge anzeigen | Eintrag vorhanden | Listenansicht öffnen | Eintrag wird angezeigt | [einfügen] | ☐ |
-| T09 | App neu starten | Eintrag gespeichert | App schliessen und öffnen | Eintrag bleibt erhalten | [einfügen] | ☐ |
-| T10 | lange Notiz | App geöffnet | lange Notiz speichern | Darstellung bleibt lesbar | [einfügen] | ☐ |
-| T11 | Landscape-Modus | App geöffnet | Gerät drehen | Layout bleibt verwendbar | [einfügen] | ☐ |
-| T12 | Eintrag löschen | Eintrag vorhanden | Löschen ausführen | Eintrag wird entfernt | [einfügen] | ☐ |
-
----
-
-## 8. Laufendes Arbeitsjournal
-
-Für jeden Arbeitstag oder grösseren Arbeitsschritt wird ein Eintrag erstellt.
-
-### Vorlage
-
-## Journal-Eintrag [Nummer]
-
-**Datum:**  
-**Arbeitszeit:**  
-**Bearbeitete Phase:**  
-**Ziel des Tages:**  
-
-### Erledigte Arbeiten
-
-- [ ] 
-- [ ] 
-- [ ] 
-
-### Verwendete Dateien / Klassen
-
-- 
-
-### Git-Commit(s)
-
-- Commit-ID oder Nachricht: 
-
-### Probleme / Herausforderungen
-
-- 
-
-### Lösungsweg
-
-- 
-
-### Ergebnis
-
-- 
-
-### Offene Punkte
-
-- [ ] 
-- [ ] 
-
-### Nächster Schritt
-
-- 
-
----
-
-## Journal-Eintrag 1
-
-**Datum:** [einfügen]  
-**Arbeitszeit:** [einfügen]  
-**Bearbeitete Phase:** Setup und Initialisierung  
-**Ziel des Tages:** Entwicklungsumgebung einrichten und Hello-World-App starten.
-
-### Erledigte Arbeiten
-
-- [ ] Visual Studio geprüft
-- [ ] .NET-MAUI-Komponenten installiert
-- [ ] Android Emulator eingerichtet
-- [ ] Hello-World-Projekt erstellt
-- [ ] App im Emulator gestartet
-- [ ] Repository erstellt
-- [ ] erster Commit erstellt
-
-### Verwendete Dateien / Klassen
-
-- `MainPage.xaml`
-- `MainPage.xaml.cs`
-- `App.xaml`
-- `AppShell.xaml`
-
-### Git-Commit(s)
-
-- `Initial project setup`
-- [weitere einfügen]
-
-### Probleme / Herausforderungen
-
-- [einfügen]
-
-### Lösungsweg
-
-- [einfügen]
-
-### Ergebnis
-
-- [einfügen]
-
-### Offene Punkte
-
-- [ ] Meilenstein 1 zeigen
-- [ ] Rückmeldung dokumentieren
-
-### Nächster Schritt
-
-- Planung und Mockup erstellen.
-
----
-
-## Journal-Eintrag 2
-
-**Datum:** [einfügen]  
-**Arbeitszeit:** [einfügen]  
-**Bearbeitete Phase:** Planung  
-**Ziel des Tages:** Aufbau, Design und Datenstruktur der App planen.
-
-### Erledigte Arbeiten
-
-- [ ] Anforderungen analysiert
-- [ ] Muss- und Kann-Ziele festgelegt
-- [ ] Mockup erstellt
-- [ ] Datenmodell geplant
-- [ ] Validierungen definiert
-- [ ] Seitenstruktur geplant
-
-### Verwendete Dateien / Werkzeuge
-
-- Figma / Papier
-- Projektauftrag
-- Markdown-Projektjournal
-
-### Git-Commit(s)
-
-- [einfügen]
-
-### Probleme / Herausforderungen
-
-- [einfügen]
-
-### Lösungsweg
-
-- [einfügen]
-
-### Ergebnis
-
-- [einfügen]
-
-### Offene Punkte
-
-- [ ] Meilenstein 2 zeigen
-- [ ] Rückmeldung einarbeiten
-
-### Nächster Schritt
-
-- MoodTracker-Projekt erstellen und Grundlayout umsetzen.
-
----
-
-## Journal-Eintrag 3
-
-**Datum:** [einfügen]  
-**Arbeitszeit:** [einfügen]  
-**Bearbeitete Phase:** Umsetzung  
-**Ziel des Tages:** Eingabeformular und Datenmodell erstellen.
-
-### Erledigte Arbeiten
-
-- [ ] Projekt `MoodTracker` erstellt
-- [ ] Klasse `MoodEntry` erstellt
-- [ ] Kursauswahl erstellt
-- [ ] Stimmungsauswahl erstellt
-- [ ] Notizfeld erstellt
-- [ ] Speichern-Button erstellt
-
-### Verwendete Dateien / Klassen
-
-- `MoodEntry.cs`
-- `MainPage.xaml`
-- `MainPage.xaml.cs`
-
-### Git-Commit(s)
-
-- [einfügen]
-
-### Probleme / Herausforderungen
-
-- [einfügen]
-
-### Lösungsweg
-
-- [einfügen]
-
-### Ergebnis
-
-- [einfügen]
-
-### Offene Punkte
-
-- [ ] Validierung ergänzen
-- [ ] Speicherung ergänzen
-- [ ] Liste erstellen
-
-### Nächster Schritt
-
-- Speichern und Laden der Einträge umsetzen.
-
----
-
-## Journal-Eintrag 4
-
-**Datum:** [einfügen]  
-**Arbeitszeit:** [einfügen]  
-**Bearbeitete Phase:** Umsetzung  
-**Ziel des Tages:** Einträge speichern und anzeigen.
-
-### Erledigte Arbeiten
-
-- [ ] Speicherlogik erstellt
-- [ ] Einträge beim App-Start geladen
-- [ ] Listenansicht erstellt
-- [ ] Datum und Uhrzeit ergänzt
-- [ ] Formular nach Speicherung zurückgesetzt
-- [ ] Erfolgsmeldung ergänzt
-
-### Verwendete Dateien / Klassen
-
-- [einfügen]
-
-### Git-Commit(s)
-
-- [einfügen]
-
-### Probleme / Herausforderungen
-
-- [einfügen]
-
-### Lösungsweg
-
-- [einfügen]
-
-### Ergebnis
-
-- [einfügen]
-
-### Offene Punkte
-
-- [ ] Darstellung verbessern
-- [ ] Tests durchführen
-
-### Nächster Schritt
-
-- App testen und Fehler beheben.
-
----
-
-## Journal-Eintrag 5
-
-**Datum:** [einfügen]  
-**Arbeitszeit:** [einfügen]  
-**Bearbeitete Phase:** Testen  
-**Ziel des Tages:** Kernfunktionen testen und Fehler beheben.
-
-### Erledigte Arbeiten
-
-- [ ] Testfälle durchgeführt
+- [ ] Testprotokoll ausgefüllt
 - [ ] Fehler dokumentiert
 - [ ] Fehler behoben
-- [ ] App erneut getestet
-- [ ] Landscape-Modus geprüft
-- [ ] Meilenstein-3-Version erstellt
+- [ ] Tests wiederholt
+- [ ] mindestens drei technische Herausforderungen beschrieben
+- [ ] Lösungswege dokumentiert
 
-### Verwendete Dateien / Klassen
+### Testprotokoll
 
-- [einfügen]
-
-### Git-Commit(s)
-
-- [einfügen]
-
-### Probleme / Herausforderungen
-
-- [einfügen]
-
-### Lösungsweg
-
-- [einfügen]
-
-### Ergebnis
-
-- [einfügen]
-
-### Offene Punkte
-
-- [ ] technische Reflexion schreiben
-- [ ] Abschlusspräsentation erstellen
-
-### Nächster Schritt
-
-- Reflexion und Präsentation abschliessen.
+| Test-ID | Testfall | Erwartetes Ergebnis | Tatsächliches Ergebnis | Status |
+|---|---|---|---|---|
+| T01 | App starten | App startet ohne Fehler | [einfügen] | ☐ |
+| T02 | Angebot auswählen | Angebot wird übernommen | [einfügen] | ☐ |
+| T03 | Stimmung auswählen | Stimmung wird übernommen | [einfügen] | ☐ |
+| T04 | gültigen Eintrag speichern | Eintrag wird gespeichert | [einfügen] | ☐ |
+| T05 | ohne Angebot speichern | Fehlermeldung erscheint | [einfügen] | ☐ |
+| T06 | ohne Stimmung speichern | Fehlermeldung erscheint | [einfügen] | ☐ |
+| T07 | ohne Notiz speichern | Eintrag wird gespeichert | [einfügen] | ☐ |
+| T08 | App neu starten | Daten bleiben erhalten | [einfügen] | ☐ |
+| T09 | Liste öffnen | Einträge werden angezeigt | [einfügen] | ☐ |
+| T10 | langen Text eingeben | Layout bleibt lesbar | [einfügen] | ☐ |
 
 ---
 
-## 9. Entscheidungsprotokoll
+## Phase 5 – Abschluss und Präsentation
 
-| Datum | Entscheidung | Begründung | Auswirkung |
-|---|---|---|---|
-| [Datum] | Drei Stimmungen verwenden | einfache Bedienung und schneller Entwicklungsstart | weniger komplexe Auswertung |
-| [Datum] | Kein ViewModel verwenden | Vorgabe des Projektauftrags | Logik teilweise im Code-Behind |
-| [Datum] | [Entscheidung] | [Begründung] | [Auswirkung] |
+**Datum:** [einfügen]
 
----
+### Was habe ich in Phase 5 umgesetzt?
 
-## 10. Problem- und Lösungsprotokoll
-
-| Nr. | Datum | Problem | Ursache | Lösungsweg | Status |
-|---|---|---|---|---|---|
-| 1 | [Datum] | [Problem] | [Ursache] | [Lösung] | ☐ offen / ☐ gelöst |
-| 2 | [Datum] | [Problem] | [Ursache] | [Lösung] | ☐ offen / ☐ gelöst |
-| 3 | [Datum] | [Problem] | [Ursache] | [Lösung] | ☐ offen / ☐ gelöst |
-
----
-
-## 11. Technische Herausforderungen
-
-Mindestens drei Herausforderungen müssen beschrieben werden.
-
-### Herausforderung 1
-
-**Problem:**  
-[Beschreibung]
-
-**Ursache:**  
-[Beschreibung]
-
-**Lösungsweg:**  
-[Beschreibung der einzelnen Schritte]
-
-**Ergebnis:**  
-[Beschreibung]
-
-**Was habe ich gelernt?**  
-[Beschreibung]
-
----
-
-### Herausforderung 2
-
-**Problem:**  
-[Beschreibung]
-
-**Ursache:**  
-[Beschreibung]
-
-**Lösungsweg:**  
-[Beschreibung der einzelnen Schritte]
-
-**Ergebnis:**  
-[Beschreibung]
-
-**Was habe ich gelernt?**  
-[Beschreibung]
-
----
-
-### Herausforderung 3
-
-**Problem:**  
-[Beschreibung]
-
-**Ursache:**  
-[Beschreibung]
-
-**Lösungsweg:**  
-[Beschreibung der einzelnen Schritte]
-
-**Ergebnis:**  
-[Beschreibung]
-
-**Was habe ich gelernt?**  
-[Beschreibung]
-
----
-
-## 12. Präsentationsvorbereitung
-
-- [ ] Ausgangslage erklären
-- [ ] Ziel der App erklären
-- [ ] wichtigste Funktionen zeigen
-- [ ] App im Emulator demonstrieren
-- [ ] Datenstruktur erklären
-- [ ] Speicherlösung erklären
-- [ ] Architektur erklären
-- [ ] Verzicht auf MVVM erwähnen
-- [ ] drei technische Herausforderungen vorstellen
-- [ ] Lösungswege erklären
-- [ ] Tests und Ergebnisse zeigen
-- [ ] Erweiterungsmöglichkeiten nennen
-- [ ] GitHub-Repository vorbereitet
-- [ ] Demo-Daten vorbereitet
-- [ ] Notfall-Screenshots erstellt
-- [ ] Präsentation probeweise durchgeführt
-
----
-
-## 13. Abschlusskontrolle
-
-### Funktionalität
-
-- [ ] App startet zuverlässig
-- [ ] Angebot kann ausgewählt werden
-- [ ] Stimmung kann ausgewählt werden
-- [ ] Notiz kann eingegeben werden
-- [ ] Eingaben werden validiert
-- [ ] Einträge werden gespeichert
-- [ ] Einträge werden angezeigt
-- [ ] Daten bleiben nach Neustart erhalten
-- [ ] keine bekannten kritischen Fehler vorhanden
-
-### Code und Architektur
-
-- [ ] C#-Codier-Richtlinien eingehalten
-- [ ] Code verständlich strukturiert
-- [ ] Zwei-Schichten-Architektur eingehalten
-- [ ] kein ViewModel verwendet
-- [ ] keine unnötigen Abhängigkeiten vorhanden
-- [ ] Warnungen geprüft
-- [ ] Kommentare geprüft
-
-### Dokumentation
-
-- [ ] Projektjournal vollständig
-- [ ] Mockup enthalten
-- [ ] Datenstruktur dokumentiert
-- [ ] Testprotokoll ausgefüllt
-- [ ] technische Herausforderungen beschrieben
-- [ ] Lösungswege beschrieben
+- [ ] Projekt fertiggestellt
+- [ ] letzter Funktionstest durchgeführt
+- [ ] GitHub-Repository aktualisiert
+- [ ] Projektjournal vervollständigt
 - [ ] Screenshots eingefügt
-- [ ] GitHub-Link eingefügt
-- [ ] Quellen angegeben
+- [ ] technische Herausforderungen dokumentiert
+- [ ] Präsentation erstellt
+- [ ] Demo vorbereitet
+- [ ] Projekt präsentiert
 
-### Abgabe
+### Inhalte der Präsentation
 
-- [ ] aktueller Stand auf GitHub
-- [ ] aktueller Stand auf SharePoint
-- [ ] Repository korrekt benannt
-- [ ] App unter dem Namen `MoodTracker` gespeichert
-- [ ] Präsentation bereit
-- [ ] Abschlussversion getestet
-
----
-
-## 14. Schlussreflexion
-
-### Was ist gut gelungen?
-
-[Text einfügen]
-
-### Welche Funktionen konnten erfolgreich umgesetzt werden?
-
-[Text einfügen]
-
-### Welche Funktionen konnten nicht oder nur teilweise umgesetzt werden?
-
-[Text einfügen]
-
-### Was war besonders schwierig?
-
-[Text einfügen]
-
-### Wie wurden die technischen Probleme gelöst?
-
-[Text einfügen]
-
-### Was würde ich beim nächsten Projekt anders machen?
-
-[Text einfügen]
-
-### Was habe ich fachlich gelernt?
-
-[Text einfügen]
-
-### Was habe ich über Projektplanung und strukturiertes Arbeiten gelernt?
-
-[Text einfügen]
-
-### Persönliches Fazit
-
-[Text einfügen]
+- Ausgangslage
+- Ziel der App
+- wichtigste Funktionen
+- Datenstruktur
+- Architektur
+- Demo der App
+- Herausforderungen
+- Lösungswege
+- Tests
+- Erweiterungsmöglichkeiten
+- persönliche Reflexion
 
 ---
 
-## 15. Quellen
+## 📸 Screenshots vom Fortschritt
 
-- Microsoft Learn: .NET MAUI
-- Projektauftrag Fachbereich API
-- ITS Codier-Richtlinien C#
-- FW 10.1 API 2026 Datenstruktur
-- [weitere Quellen ergänzen]
+| Datum | Phase / Feature | Screenshot |
+|---|---|---|
+| 01.07.2026 | HelloWorldMAUI | ![](screenshots/phase1_helloworld.png) |
+| [Datum] | Mockup Eingabeformular | ![](screenshots/phase2_mockup_form.png) |
+| [Datum] | Mockup Listenansicht | ![](screenshots/phase2_mockup_list.png) |
+| [Datum] | Erste MoodTracker-Version | ![](screenshots/phase3_first_version.png) |
+| [Datum] | Fertiges Eingabeformular | ![](screenshots/final_form.png) |
+| [Datum] | Fertige Listenansicht | ![](screenshots/final_list.png) |
 
 ---
 
-## 16. Anhänge
+## ⚠️ Herausforderungen und Blockaden
 
-- [ ] Mockup
-- [ ] UML-Klassendiagramm
-- [ ] Screenshots der App
-- [ ] Testprotokoll
-- [ ] GitHub-Link
-- [ ] Präsentation
-- [ ] weitere Dokumente
+### 🧩 Visual Studio und Projektstruktur
+
+**Problem:**
+
+Das Projekt `HelloWorldMAUI` wurde zuerst direkt im Hauptordner des Repositories erstellt. Das Projektjournal sollte jedoch auf derselben Ebene wie die beiden Projekte `HelloWorldMAUI` und `MoodTracker` liegen.
+
+Nach dem Verschieben der Projektdateien versuchte Visual Studio weiterhin, die alte Datei `HelloWorldMAUI.csproj` zu öffnen.
+
+Dabei erschien folgende Meldung:
+
+```text
+An error occurred in 'Miscellaneous Files' while attempting to open
+'HelloWorldMAUI.csproj'.
+
+The document cannot be opened. It has been renamed, deleted, or moved.
+```
+
+**Lösung:**
+
+- Projektdateien in einen eigenen Unterordner verschoben
+- Pfad in der Solution-Datei angepasst
+- veraltete Tabs geschlossen
+- Visual-Studio-Zwischenspeicher einmalig gelöscht
+- korrekte `.slnx`-Datei direkt geöffnet
+
+```powershell
+Remove-Item -Recurse -Force .\.vs -ErrorAction SilentlyContinue
+Start-Process .\HelloWorldMAUI.slnx
+```
+
+**Erkenntnis:**
+
+Projekt- und Repository-Struktur sollten möglichst vor dem Erstellen der Projekte geplant werden. Dadurch können spätere Pfadprobleme vermieden werden.
+
+### 🤖 Android SDK und Emulator
+
+**Problem:**
+
+Beim Starten des Android-Ziels erschien folgende Meldung:
+
+```text
+The Android SDK licenses acceptance failed.
+These must be accepted to continue using Android.
+```
+
+**Aktueller Stand:**
+
+Die App kann über `Windows Machine` gestartet werden. Dies zeigt, dass das MAUI-Projekt grundsätzlich funktioniert.
+
+Für den Projektauftrag muss die App später zusätzlich im Android Emulator oder auf einem echten Android-Gerät getestet werden.
+
+**Geplanter Lösungsweg:**
+
+- Android SDK Manager öffnen
+- Android-SDK-Lizenzen akzeptieren
+- Emulator neu starten
+- Projekt für `net10.0-android` bauen
+- App auf dem Android Emulator ausführen
+
+**Status:** offen
+
+### 🌿 Git, Commit und Push
+
+**Problem:**
+
+Der Befehl `git` wurde zu Beginn im Terminal nicht erkannt.
+
+```text
+git wurde nicht als Name eines Cmdlet, einer Funktion,
+einer Skriptdatei oder eines ausführbaren Programms erkannt.
+```
+
+**Lösung:**
+
+Git for Windows wurde installiert.
+
+```powershell
+git --version
+```
+
+Ausgabe:
+
+```text
+git version 2.54.0.windows.1
+```
+
+Danach konnten Änderungen über das Terminal hinzugefügt, committed und gepusht werden.
+
+```powershell
+git status
+git add .
+git commit -m "Add initial MoodTracker project"
+git push
+```
+
+**Erkenntnis:**
+
+```text
+add → commit → push
+```
+
+`git push` allein erstellt keinen Commit.
+
+---
+
+## 💻 Besonders erwähnenswerte Code-Beispiele
+
+### Geplantes Datenmodell
+
+```csharp
+public class MoodEntry
+{
+    public int Id { get; set; }
+    public string CourseName { get; set; } = string.Empty;
+    public string Mood { get; set; } = string.Empty;
+    public string Note { get; set; } = string.Empty;
+    public DateTime CreatedAt { get; set; }
+}
+```
+
+### Geplante Validierung
+
+```csharp
+private bool ValidateInput()
+{
+    if (string.IsNullOrWhiteSpace(SelectedCourse))
+    {
+        return false;
+    }
+
+    if (string.IsNullOrWhiteSpace(SelectedMood))
+    {
+        return false;
+    }
+
+    return true;
+}
+```
+
+### Geplanter Speichervorgang
+
+```csharp
+private void SaveMoodEntry()
+{
+    var entry = new MoodEntry
+    {
+        Id = GetNextId(),
+        CourseName = SelectedCourse,
+        Mood = SelectedMood,
+        Note = NoteText,
+        CreatedAt = DateTime.Now
+    };
+
+    moodEntries.Add(entry);
+}
+```
+
+Die Code-Beispiele werden während der Umsetzung durch den tatsächlich verwendeten Code ersetzt oder ergänzt.
+
+---
+
+## Reflexion
+
+### Aktueller Zwischenstand
+
+Der Einstieg in das Projekt war technisch anspruchsvoller als erwartet. Besonders die Einrichtung von Visual Studio, die Struktur des GitHub-Repositories und die Android-Umgebung benötigten mehrere Schritte.
+
+Positiv ist, dass die .NET-MAUI-Umgebung grundsätzlich funktioniert und die Hello-World-App über `Windows Machine` gestartet werden konnte. Ausserdem wurde Git erfolgreich eingerichtet und das Projektjournal konnte über das Terminal committed und gepusht werden.
+
+### Was habe ich bisher gelernt?
+
+- wie ein .NET-MAUI-Projekt aufgebaut ist
+- Unterschied zwischen Solution, Projekt und Repository
+- wie mehrere Projekte in einem Repository organisiert werden können
+- wie Dateien mit Git hinzugefügt, committed und gepusht werden
+- dass `Windows Machine` kein Android Emulator ist
+- wie wichtig eine saubere Ordnerstruktur vor Projektbeginn ist
+- wie Visual Studio alte Dateipfade und Tabs zwischenspeichert
+
+### Was war bisher schwierig?
+
+- Visual Studio öffnete nach dem Verschieben weiterhin alte Dateipfade
+- Git war zuerst nicht im Terminal verfügbar
+- die Commit-Funktion in Visual Studio war nicht eindeutig auffindbar
+- die Android-SDK-Lizenzen konnten noch nicht akzeptiert werden
+- die Repository-Struktur musste nachträglich angepasst werden
+
+### Nächste Schritte
+
+- [ ] Android-SDK-Lizenzen akzeptieren
+- [ ] Android Emulator vollständig einrichten
+- [ ] HelloWorldMAUI im Android Emulator starten
+- [ ] Meilenstein 1 abschliessen
+- [ ] Mockup erstellen
+- [ ] Datenstruktur definitiv festlegen
+- [ ] Validierungen definieren
+- [ ] Meilenstein 2 abschliessen
+- [ ] erste MoodTracker-Funktionen umsetzen
