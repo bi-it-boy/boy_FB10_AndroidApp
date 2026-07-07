@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    x:Class="MoodTracker.RatingPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Bewertung"
+    BackgroundColor="#F5F5F5">
+
+    <VerticalStackLayout
+        Padding="16"
+        Spacing="16">
+
+        <Label
+            Text="Kurs bewerten"
+            FontSize="28"
+            FontAttributes="Bold" />
+
+        <Label
+            x:Name="CourseNameLabel"
+            FontSize="20"
+            FontAttributes="Bold" />
+
+        <Label
+            Text="Bewertung auswählen"
+            FontSize="16" />
+        <Grid
+            x:Name="RatingButtonGrid"
+            ColumnDefinitions="*,*,*,*,*"
+            ColumnSpacing="8">
+            <Button
+                Grid.Column="0"
+                Text="1"
+                BackgroundColor="LightGray"
+                TextColor="Black"
+                Clicked="OnRatingClicked" />
+            <Button
+                Grid.Column="1"
+                Text="2"
+                Clicked="OnRatingClicked"
+                BackgroundColor="LightGray"
+                TextColor="Black"/>
+            <Button
+                Grid.Column="2"
+                Text="3"
+                Clicked="OnRatingClicked"
+                BackgroundColor="LightGray"
+                TextColor="Black"/>
+            <Button
+                Grid.Column="3"
+                Text="4"
+                Clicked="OnRatingClicked"
+                BackgroundColor="LightGray"
+                TextColor="Black"/>
+            <Button
+                Grid.Column="4"
+                Text="5"
+                Clicked="OnRatingClicked"
+                BackgroundColor="LightGray"
+                TextColor="Black"/>
+        </Grid>
+
+        <Button
+        Text="Speichern"
+        Clicked="OnSaveClicked" />
+
+        <Label
+            x:Name="SelectedRatingLabel"
+            Text="Noch keine Bewertung ausgewählt"
+            FontSize="16"
+            TextColor="Gray" />
+
+    </VerticalStackLayout>
+
+</ContentPage>

@@ -35,11 +35,7 @@ namespace MoodTracker
             Button button = (Button)sender;
             Course course = (Course)button.BindingContext;
 
-            await DisplayAlertAsync(
-                "Bewerten",
-                "Du möchtest diesen Kurs bewerten: " + course.Name,
-                "OK"
-                );
+            await Navigation.PushAsync(new RatingPage(course));
         }
     }
 
@@ -65,6 +61,12 @@ namespace MoodTracker
 
         [JsonPropertyName("time")]
         public string Time { get; set; } = "";
+
+        [JsonPropertyName("rating")]
+        public int? Rating { get; set; }
+
+        [JsonPropertyName("rating_timestamp")]
+        public DateTime? RatingTimestamp { get; set; }
 
         public string DateAndTime
         {

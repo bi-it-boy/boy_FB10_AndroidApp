@@ -15,21 +15,6 @@
             FontSize="28"
             FontAttributes="Bold" />
 
-        <Grid
-            Grid.Row="1"
-            ColumnDefinitions="*,Auto"
-            ColumnSpacing="8">
-
-            <SearchBar
-                Grid.Column="0"
-                Placeholder="Kurse suchen" />
-
-            <Button
-                Grid.Column="1"
-                Text="Filter" />
-
-        </Grid>
-
         <CollectionView
             x:Name="CourseCollectionView"
             Grid.Row="2"
@@ -78,10 +63,6 @@
                                     Grid.Column="0"
                                     Text="Bewerten"
                                     Clicked="OnRateClicked" />
-
-                                <Button
-                                Grid.Column="1"
-                                Text="Speichern" />
 
                             </Grid>
 
