@@ -5,12 +5,19 @@ namespace MoodTracker
 {
     public partial class MainPage : ContentPage
     {
+        private List<Course> courses = new List<Course>();
         public MainPage()
         {
             InitializeComponent();
 
-
             LoadCourses(); // Kurse aus der JSON-Datei laden
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            CourseCollectionView.ItemsSource = null;
+            CourseCollectionView.ItemsSource = courses;
         }
 
         private async void LoadCourses() // async macht, dass ich await benutzen kann
@@ -24,9 +31,10 @@ namespace MoodTracker
             // wenn Daten ausgelesen werden können, DANN übergeben wir an Liste
             if (data != null)
             {
+                courses = data.Courses; 
                 // CollectionView aus MainPage.xaml
                 // ItemsSource bestimmt, welche Daten in der Liste angezeigt werden
-                CourseCollectionView.ItemsSource = data.Courses;
+                CourseCollectionView.ItemsSource = courses;
             }
         }
 
@@ -73,6 +81,19 @@ namespace MoodTracker
             get
             {
                 return Date + " · " + Time;
+            }
+        }
+
+        public string RatingText
+        {
+            get
+            {
+                if (Rating == null)
+                {
+                    return "Noch keine Bewertung";
+                }
+
+                return "Bewertung: " + Rating + "/5";
             }
         }
     }

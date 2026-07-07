@@ -55,6 +55,11 @@
                                 Text="{Binding Description}"
                                 FontSize="14" />
 
+                            <Label
+                                Text="{Binding RatingText}"
+                                FontSize="14"
+                                TextColor="Gray" />
+
                             <Grid
                                 ColumnDefinitions="*,*"
                                 ColumnSpacing="8">
